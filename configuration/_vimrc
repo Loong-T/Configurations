@@ -6,90 +6,104 @@ set number
 " set encoding=utf-8
 " set termencoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8,chinese,cp936  " æŸ¥çœ‹encoding-nameå¸®åŠ©æ¥ç¡®å®š
-set expandtab  " è‡ªåŠ¨å±•å¼€tabæˆç©ºæ ¼
-set shiftwidth=4  " æ¯å±‚ç¼©è¿›2ç©ºæ ¼
-set tabstop=4  " tabå®½åº¦
+set fileencodings=utf-8,chinese,cp936  " ²é¿´encoding-name°ïÖúÀ´È·¶¨
+set expandtab  " ×Ô¶¯Õ¹¿ªtab³É¿Õ¸ñ
+set shiftwidth=2  " Ã¿²ãËõ½ø2¿Õ¸ñ
+set tabstop=2  " tab¿í¶È
 
-set guioptions-=m  " å»æ‰GUIçš„èœå•
-set guioptions-=T  " å»æ‰GUIçš„å·¥å…·æ 
+set guioptions-=m  " È¥µôGUIµÄ²Ëµ¥
+set guioptions-=T  " È¥µôGUIµÄ¹¤¾ßÀ¸
 
-" æ˜¾ç¤ºç©ºæ ¼
+" ÏÔÊ¾¿Õ¸ñ
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
-" Backspaceåœ¨Insert modeä¸‹å¼‚å¸¸
+" BackspaceÔÚInsert modeÏÂÒì³£
 set backspace=2
 set backspace=indent,eol,start
 
-" å¯¹Windowsè¿›è¡Œè®¾ç½®
+" ¶ÔWindows½øĞĞÉèÖÃ
 if has("win32")
   set guifont=Consolas:h11.5:cDEFAULT
   " set guifontwide=YaHei\ Consolas\ Hybrid:h11
-  au GUIEnter * simalt ~x  " æœ€å¤§åŒ–çª—å£
+  au GUIEnter * simalt ~x  " ×î´ó»¯´°¿Ú
 endif
 
-" è‡ªåŠ¨åˆ‡æ¢å·¥ä½œç›®å½•
+" ×Ô¶¯ÇĞ»»¹¤×÷Ä¿Â¼
 set autochdir
 
 set t_Co=256
 " colorscheme desert
 
-set rtp+=~/.vim/bundle/vundle/
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-sensible'
 
 " ColorScheme DsertEx
 Plugin 'vim-scripts/desertEx'
 colorscheme desertEx
 
+Plugin 'myusuf3/numbers.vim'
+
+Plugin 'kien/rainbow_parentheses.vim'
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+Plugin 'tpope/vim-surround'
+
 " Emmet
-Bundle 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim'
 " Emmet Configurations
-" let g:user_emmet_mode='n'  " åªå¯ç”¨normalæ¨¡å¼åŠŸèƒ½
-" let g:user_emmet_mode='inv'  " å¯ç”¨æ‰€æœ‰æ¨¡å¼åŠŸèƒ½ï¼Œä¸‹åŒ
+" let g:user_emmet_mode='n'  " Ö»ÆôÓÃnormalÄ£Ê½¹¦ÄÜ
+" let g:user_emmet_mode='inv'  " ÆôÓÃËùÓĞÄ£Ê½¹¦ÄÜ£¬ÏÂÍ¬
 " let g:user_emmet_mode='a'
-" åªå¯¹html/csså¯ç”¨
+" Ö»¶Ôhtml/cssÆôÓÃ
 " let g:user_emmet_install_global = 0
 " autocmd FileType html,css EmmetInstall
 
 " AutoClose
-Bundle 'AutoClose'
+Plugin 'AutoClose'
 
-" è¯†åˆ«æ–‡ä»¶ç¼–ç 
-Bundle 'FencView.vim'
+" Ê¶±ğÎÄ¼ş±àÂë
+Plugin 'FencView.vim'
 
 " ShowTrailingWhitespace
-Bundle 'ShowTrailingWhitespace'
+Plugin 'ShowTrailingWhitespace'
 
 " EasyMotion
-Bundle 'EasyMotion'
+Plugin 'EasyMotion'
 
 " The-NERD-tree
-Bundle 'The-NERD-tree'
-" åœ¨ vim å¯åŠ¨çš„æ—¶å€™é»˜è®¤å¼€å¯ NERDTreeï¼ˆautocmd å¯ä»¥ç¼©å†™ä¸º auï¼‰
+Plugin 'The-NERD-tree'
+" ÔÚ vim Æô¶¯µÄÊ±ºòÄ¬ÈÏ¿ªÆô NERDTree£¨autocmd ¿ÉÒÔËõĞ´Îª au£©
 " autocmd vimEnter * NERDTree
 
-" The-NERD-Commenter å¿«é€Ÿæ³¨é‡Š
-Bundle 'The-NERD-Commenter'
+" The-NERD-Commenter ¿ìËÙ×¢ÊÍ
+Plugin 'The-NERD-Commenter'
 
-" Markdown-syntax Markdownåˆ°HTML
-Bundle 'Markdown-syntax'
+" Markdown-syntax Markdownµ½HTML
+Plugin 'Markdown-syntax'
 
 " vim-sacla
-Bundle 'derekwyatt/vim-scala'
+Plugin 'derekwyatt/vim-scala'
 
 " html5.vim
-Bundle 'othree/html5.vim'
+Plugin 'othree/html5.vim'
 
 " play2vim
-Bundle 'gre/play2vim'
+Plugin 'gre/play2vim'
 
 " UltiSnips
-Bundle 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -110,21 +124,24 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " YouCompleteMe Bundle 'YouCompleteMe'
 
 " vim_indent-guides
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
 " CtrlP
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " Change the default mapping and the default command to invoke CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Matchit
-Bundle 'edsono/vim-matchit'
+Plugin 'edsono/vim-matchit'
 
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
+
+" All of your Plugins must be added before the following line
+" call vundle#end()            " required
 
 filetype plugin indent on     " required!
