@@ -6,30 +6,30 @@ set number
 " set encoding=utf-8
 " set termencoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8,chinese,cp936  " ²é¿´encoding-name°ïÖúÀ´È·¶¨
-set expandtab  " ×Ô¶¯Õ¹¿ªtab³É¿Õ¸ñ
-set shiftwidth=2  " Ã¿²ãËõ½ø2¿Õ¸ñ
-set tabstop=2  " tab¿í¶È
+set fileencodings=utf-8,chinese,cp936  " æŸ¥çœ‹encoding-nameå¸®åŠ©æ¥ç¡®å®š
+set expandtab  " è‡ªåŠ¨å±•å¼€tabæˆç©ºæ ¼
+set shiftwidth=2  " æ¯å±‚ç¼©è¿›2ç©ºæ ¼
+set tabstop=2  " tabå®½åº¦
 
-set guioptions-=m  " È¥µôGUIµÄ²Ëµ¥
-set guioptions-=T  " È¥µôGUIµÄ¹¤¾ßÀ¸
+set guioptions-=m  " å»æ‰GUIçš„èœå•
+set guioptions-=T  " å»æ‰GUIçš„å·¥å…·æ 
 
-" ÏÔÊ¾¿Õ¸ñ
+" æ˜¾ç¤ºç©ºæ ¼
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
-" BackspaceÔÚInsert modeÏÂÒì³£
+" Backspaceåœ¨Insert modeä¸‹å¼‚å¸¸
 set backspace=2
 set backspace=indent,eol,start
 
-" ¶ÔWindows½øĞĞÉèÖÃ
+" å¯¹Windowsè¿›è¡Œè®¾ç½®
 if has("win32")
   set guifont=Consolas:h11.5:cDEFAULT
   " set guifontwide=YaHei\ Consolas\ Hybrid:h11
-  au GUIEnter * simalt ~x  " ×î´ó»¯´°¿Ú
+  au GUIEnter * simalt ~x  " æœ€å¤§åŒ–çª—å£
 endif
 
-" ×Ô¶¯ÇĞ»»¹¤×÷Ä¿Â¼
+" è‡ªåŠ¨åˆ‡æ¢å·¥ä½œç›®å½•
 set autochdir
 
 set t_Co=256
@@ -63,17 +63,17 @@ Plugin 'tpope/vim-surround'
 " Emmet
 Plugin 'mattn/emmet-vim'
 " Emmet Configurations
-" let g:user_emmet_mode='n'  " Ö»ÆôÓÃnormalÄ£Ê½¹¦ÄÜ
-" let g:user_emmet_mode='inv'  " ÆôÓÃËùÓĞÄ£Ê½¹¦ÄÜ£¬ÏÂÍ¬
+" let g:user_emmet_mode='n'  " åªå¯ç”¨normalæ¨¡å¼åŠŸèƒ½
+" let g:user_emmet_mode='inv'  " å¯ç”¨æ‰€æœ‰æ¨¡å¼åŠŸèƒ½ï¼Œä¸‹åŒ
 " let g:user_emmet_mode='a'
-" Ö»¶Ôhtml/cssÆôÓÃ
+" åªå¯¹html/csså¯ç”¨
 " let g:user_emmet_install_global = 0
 " autocmd FileType html,css EmmetInstall
 
 " AutoClose
 Plugin 'AutoClose'
 
-" Ê¶±ğÎÄ¼ş±àÂë
+" è¯†åˆ«æ–‡ä»¶ç¼–ç 
 Plugin 'FencView.vim'
 
 " ShowTrailingWhitespace
@@ -84,13 +84,13 @@ Plugin 'EasyMotion'
 
 " The-NERD-tree
 Plugin 'The-NERD-tree'
-" ÔÚ vim Æô¶¯µÄÊ±ºòÄ¬ÈÏ¿ªÆô NERDTree£¨autocmd ¿ÉÒÔËõĞ´Îª au£©
+" åœ¨ vim å¯åŠ¨çš„æ—¶å€™é»˜è®¤å¼€å¯ NERDTreeï¼ˆautocmd å¯ä»¥ç¼©å†™ä¸º auï¼‰
 " autocmd vimEnter * NERDTree
 
-" The-NERD-Commenter ¿ìËÙ×¢ÊÍ
+" The-NERD-Commenter å¿«é€Ÿæ³¨é‡Š
 Plugin 'The-NERD-Commenter'
 
-" Markdown-syntax Markdownµ½HTML
+" Markdown-syntax Markdownåˆ°HTML
 Plugin 'Markdown-syntax'
 
 " vim-sacla
