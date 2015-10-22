@@ -1,0 +1,147 @@
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+syntax on
+set number
+" set encoding=utf-8
+" set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,chinese,cp936  " 查看encoding-name帮助来确定
+set expandtab  " 自动展开tab成空格
+set shiftwidth=2  " 每层缩进2空格
+set tabstop=2  " tab宽度
+
+set guioptions-=m  " 去掉GUI的菜单
+set guioptions-=T  " 去掉GUI的工具栏
+
+" 显示空格
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" Backspace在Insert mode下异常
+set backspace=2
+set backspace=indent,eol,start
+
+" 对Windows进行设置
+if has("win32")
+  set guifont=Consolas:h11.5:cDEFAULT
+  " set guifontwide=YaHei\ Consolas\ Hybrid:h11
+  au GUIEnter * simalt ~x  " 最大化窗口
+endif
+
+" 自动切换工作目录
+set autochdir
+
+set t_Co=256
+" colorscheme desert
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-sensible'
+
+" ColorScheme DsertEx
+Plugin 'vim-scripts/desertEx'
+colorscheme desertEx
+
+Plugin 'myusuf3/numbers.vim'
+
+Plugin 'kien/rainbow_parentheses.vim'
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+Plugin 'tpope/vim-surround'
+
+" Emmet
+Plugin 'mattn/emmet-vim'
+" Emmet Configurations
+" let g:user_emmet_mode='n'  " 只启用normal模式功能
+" let g:user_emmet_mode='inv'  " 启用所有模式功能，下同
+" let g:user_emmet_mode='a'
+" 只对html/css启用
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
+
+" AutoClose
+Plugin 'AutoClose'
+
+" 识别文件编码
+Plugin 'FencView.vim'
+
+" ShowTrailingWhitespace
+Plugin 'ShowTrailingWhitespace'
+
+" EasyMotion
+Plugin 'EasyMotion'
+
+" The-NERD-tree
+Plugin 'The-NERD-tree'
+" 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
+" autocmd vimEnter * NERDTree
+
+" The-NERD-Commenter 快速注释
+Plugin 'The-NERD-Commenter'
+
+" Markdown-syntax Markdown到HTML
+Plugin 'Markdown-syntax'
+
+" vim-sacla
+Plugin 'derekwyatt/vim-scala'
+
+" html5.vim
+Plugin 'othree/html5.vim'
+
+" play2vim
+Plugin 'gre/play2vim'
+
+" UltiSnips
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+" let g:UltiSnipsEditSplit="vertical"
+
+" vim-autoformat
+" Bundle 'Chiel92/vim-autoformat'
+
+" Markdown Bundle 'Markdown'
+
+" YouCompleteMe Bundle 'YouCompleteMe'
+
+" vim_indent-guides
+Plugin 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+
+" CtrlP
+Plugin 'kien/ctrlp.vim'
+" Change the default mapping and the default command to invoke CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Matchit
+Plugin 'edsono/vim-matchit'
+
+Plugin 'bling/vim-airline'
+
+Plugin 'scrooloose/syntastic'
+
+" All of your Plugins must be added before the following line
+" call vundle#end()            " required
+
+filetype plugin indent on     " required!
